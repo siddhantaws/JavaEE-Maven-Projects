@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4a4bc23d-98ee-442a-90fc-f940cc302017" activeEnvironment="Default" name="Jaxws-Supply-Chain-Client" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3799c899-9bee-4407-9f1a-ecd6e8ba41e5" wsaVersion="NONE" name="WarehouseImplServiceSoapBinding" type="wsdl" bindingName="{http://jaxws.manh.com/}WarehouseImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8081/Jaxws-Supply-Chain-Server/WarehouseImpl?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8081/Jaxws-Supply-Chain-Server/WarehouseImpl?wsdl"><con:part><con:url>http://localhost:8081/Jaxws-Supply-Chain-Server/WarehouseImpl?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WarehouseImplService" targetNamespace="http://jaxws.manh.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://jaxws.manh.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://jaxws.manh.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="submitPO" type="tns:submitPO"/>
+      <xs:element name="submitPOResponse" type="tns:submitPOResponse"/>
+      <xs:complexType name="submitPO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:purchaseOrder"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="purchaseOrder">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="itemList" nillable="true" type="tns:item"/>
+          <xs:element minOccurs="0" name="customerNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="item">
+        <xs:sequence>
+          <xs:element name="itemID" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element name="price" type="xs:float"/>
+          <xs:element name="quantity" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="submitPOResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:shipmentNotice"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="shipmentNotice">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="itemList" nillable="true" type="tns:item"/>
+          <xs:element minOccurs="0" name="customerNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="shipmentNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InvalidPOException" type="tns:InvalidPOException"/>
+      <xs:complexType name="InvalidPOException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="detail" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="InvalidPOException">
+    <wsdl:part element="tns:InvalidPOException" name="InvalidPOException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitPOResponse">
+    <wsdl:part element="tns:submitPOResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitPO">
+    <wsdl:part element="tns:submitPO" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WarehouseImpl">
+    <wsdl:operation name="submitPO">
+      <wsdl:input message="tns:submitPO" name="submitPO"></wsdl:input>
+      <wsdl:output message="tns:submitPOResponse" name="submitPOResponse"></wsdl:output>
+      <wsdl:fault message="tns:InvalidPOException" name="InvalidPOException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WarehouseImplServiceSoapBinding" type="tns:WarehouseImpl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="submitPO">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="submitPO">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitPOResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidPOException">
+        <soap:fault name="InvalidPOException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WarehouseImplService">
+    <wsdl:port binding="tns:WarehouseImplServiceSoapBinding" name="WarehouseImplPort">
+      <soap:address location="http://localhost:8081/Jaxws-Supply-Chain-Server/WarehouseImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/Jaxws-Supply-Chain-Server/WarehouseImpl</con:endpoint></con:endpoints><con:operation id="f3161ca8-5bad-4230-9d05-202edff5c7a5" isOneWay="false" action="" name="submitPO" bindingOperationName="submitPO" type="Request-Response" outputName="submitPOResponse" inputName="submitPO" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a48094a9-11a4-4557-9f06-99c2da5c355d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/Jaxws-Supply-Chain-Server/WarehouseImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.manh.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <jax:submitPO>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Zero or more repetitions:-->\r
+            <itemList>\r
+               <itemID>87</itemID>\r
+               <!--Optional:-->\r
+               <name>Fodd Item</name>\r
+               <price>16</price>\r
+               <quantity>18</quantity>\r
+            </itemList>\r
+            <!--Optional:-->\r
+            <customerNumber>SIDHANTA</customerNumber>\r
+            <!--Optional:-->\r
+            <orderNumber>ORD-123456</orderNumber>\r
+         </arg0>\r
+      </jax:submitPO>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jaxws.manh.com/WarehouseImpl/submitPO"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
