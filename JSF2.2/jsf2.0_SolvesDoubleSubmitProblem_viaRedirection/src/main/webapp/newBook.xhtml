@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Create a new book</title>
+    </h:head>
+    <h:body>
+        <h1>Create a new book</h1>
+        This example shows a typical double-submit problem. For detailed description
+        of "double-submit" problem, please read <a href="http://www.theserverside.com/tt/articles/article.tss?l=RedirectAfterPost">"Redirect After Post" article by
+            Michael Jouravlev</a>.
+        <hr/>
+        <h:form>
+            <table border="0">
+                <tr>
+                    <td>
+                        <h:outputLabel value="Title :"/>
+                    </td>
+                    <td>
+                        <h:inputText value="#{itemBean.book.title}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h:outputLabel value="Price : "/>
+                    </td>
+                    <td>
+                        <h:inputText value="#{itemBean.book.price}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h:outputLabel value="Description  : "/>
+                    </td>
+                    <td>
+                        <h:inputTextarea value="#{itemBean.book.description}" cols="16" rows="3"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h:outputLabel value="Number of pages : "/>
+                    </td>
+                    <td>
+                        <h:inputText value="#{itemBean.book.nbOfPage}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h:outputLabel value="Tags : "/>
+                    </td>
+                    <td>
+                        <h:inputText value="#{itemBean.tags}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h:outputLabel value="Language code : "/>
+                    </td>
+                    <td>
+                        <h:inputText value="#{itemBean.languageCode}"/>
+                    </td>
+                </tr>
+            </table>
+
+            <h:commandButton value="Create a book" action="#{itemBean.doCreateBook}"/>
+
+        </h:form>
+
+        <hr/>
+        <h1>List of books</h1>
+        <hr/>
+        <h:dataTable value="#{itemBean.bookList}" var="bk" border="1">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="ID"/>
+                </f:facet>
+                <h:outputText value="#{bk.id}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Title"/>
+                </f:facet>
+                <h:outputText value="#{bk.title}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Price"/>
+                </f:facet>
+                <h:outputText value="#{bk.price}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Language"/>
+                </f:facet>
+                <h:outputText value="#{bk.contentLanguage}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Description"/>
+                </f:facet>
+                <h:outputText value="#{bk.description}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Number Of Pages"/>
+                </f:facet>
+                <h:outputText value="#{bk.nbOfPage}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Tags"/>
+                </f:facet>
+                <h:outputText value="#{bk.tagsAsString}"/>
+            </h:column>
+        </h:dataTable>
+      
+    </h:body>
+</html>

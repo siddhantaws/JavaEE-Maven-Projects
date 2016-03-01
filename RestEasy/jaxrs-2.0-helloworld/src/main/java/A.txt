@@ -1,0 +1,9 @@
+<customer id="2206">
+<first-name>Siddhanta</first-name>
+<last-name>Pattnaik</last-name>
+<street>4th Street</street>
+<city>Bangalore</city>
+<state>Karnataka</state>
+<zip>560066</zip>
+<country>India</country>
+</customer>

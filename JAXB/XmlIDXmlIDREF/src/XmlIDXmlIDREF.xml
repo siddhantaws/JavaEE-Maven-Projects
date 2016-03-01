@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+
+    <employee id="1" name="Jane Doe">
+        <reportsmanager>2</reportsmanager>
+        <reportsmanager>3</reportsmanager>
+    </employee>
+    <employee id="2" name="John Smith">
+        <manager>1</manager>
+    </employee>
+    <employee id="3" name="Anne Jones">
+        <manager>1</manager>
+    </employee>
+
+</company> 

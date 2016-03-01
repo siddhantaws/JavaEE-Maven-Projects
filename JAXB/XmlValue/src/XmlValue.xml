@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 
+<shirts>
+    <price>
+    	<amount>100.5</amount>
+    </price>
+</shirts>  -->
+<shirts>
+    <price>100.5</price>
+</shirts>

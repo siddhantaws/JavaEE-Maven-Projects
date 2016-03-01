@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.maven.cdi</groupId>
+  <artifactId>cdi_javase_greeting</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>cdi_javase_greeting</name>
+  <description>cdi_javase_greeting</description>
+  <repositories>
+        <repository>
+            <id>cdi.advocate</id>
+            <name>CDI Advocacy</name>
+            <url>http://jee6-cdi.googlecode.com/svn/m2/repository/</url>
+        </repository>
+        <repository>
+            <id>caucho.maven.repo</id>
+            <name>Caucho Repository</name>
+            <url>http://caucho.com/m2</url>
+        </repository>
+       <!-- Uncomment this if you want to use Weld
+        <repository>
+            <id>jboss.maven.repo</id>
+            <name>JBoss Repository</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        </repository>
+       -->
+    </repositories>
+  <dependencies>
+        <dependency>
+            <groupId>org.cdisource.beancontainer</groupId>
+            <artifactId>beancontainer-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cdisource.beancontainer</groupId>
+            <artifactId>beancontainer-resin-impl</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+        <!-- 
+	     Uncomment this if you want to use Weld
+	     <dependency> 
+	       <groupId>org.cdiadvocate</groupId> 
+	       <artifactId>cdiadvocate-weld-impl</artifactId> 
+               <version>1.0-SNAPSHOT</version> 
+	     </dependency>
+	-->
+    </dependencies>
+  <build>
+   <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+   </plugins>         
+ </build> 
+</project>

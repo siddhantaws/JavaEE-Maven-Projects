@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <title>Sample validation example</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table border="0">
+                <tr>
+                    <td>
+                        <h:outputLabel value="Email:"/>
+                    </td>
+                    <td>
+                        <h:inputText value="#{sampleBean.email}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h:outputLabel value="Username: "/>
+                    </td>
+                    <td>
+                        <h:inputText value="#{sampleBean.userName}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h:outputLabel value="Password: "/>
+                    </td>
+                    <td>
+                        <h:inputText value="#{sampleBean.password}" />
+                    </td>
+                </tr>
+
+            </table>
+
+             <h:commandButton id="submit" value="Back" action="greeting"/>
+
+        </h:form>
+    </h:body>
+</html>
+

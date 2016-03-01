@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  <persistence-unit name="jsf-jpa-war" transaction-type="JTA">
+    <jta-data-source>jdbc/__default</jta-data-source>
+    <properties>
+      <!-- use this property if target server is GlassFish V3 with EclipseLink -->
+      <!-- use this property if toplink is a target server persistence provider
+      <property name="toplink.ddl-generation" value="drop-and-create-tables"/> -->
+    </properties>
+  </persistence-unit>
+</persistence>
